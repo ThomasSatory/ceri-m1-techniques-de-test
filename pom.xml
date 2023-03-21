@@ -29,6 +29,6 @@
     </dependencies>
 
     <build>
-        <testSourceDirectory>src/test/java</testSourceDirectory> //add the test directory
+        <testSourceDirectory>src/test/java</testSourceDirectory>
     </build>
 </project>
