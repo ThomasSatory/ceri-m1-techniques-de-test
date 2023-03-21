@@ -31,6 +31,10 @@ public class IPokedexTest {
     }
 
     // Test all the methods of the IPokedex interface
+    @Test
+    public void testSize() {
+        Assert.assertEquals(pokedex.size(), 0);
+    }
 
     @Test
     public void testAddPokemon() throws PokedexException {

@@ -1,7 +1,5 @@
 package fr.univavignon.pokedex.api;
 
-
-import fr.univavignon.pokedex.api.*;
 import org.junit.Test;
 import org.junit.Assert;
 import org.junit.Before;
