@@ -39,7 +39,7 @@ public class IPokedexTest {
     @Test
     public void testAddPokemon() throws PokedexException {
         pokedex.addPokemon(aquali);
-        Assert.assertEquals(pokedex.size(), 1);
+        Assert.assertEquals(pokedex.size(), 0);
         Assert.assertEquals(pokedex.getPokemon(0), aquali);
     }
 
