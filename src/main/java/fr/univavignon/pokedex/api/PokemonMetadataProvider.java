@@ -24,7 +24,7 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
      */
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-        if(index < 0 || index >= pokemonMetadatas.size()){
+        if(index < 0 || index >= 151){
             throw new PokedexException("Index invalide");
         }
         else{
