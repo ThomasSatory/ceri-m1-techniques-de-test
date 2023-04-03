@@ -14,11 +14,13 @@ public class IPokemonTrainerFactoryTest {
     public void init(){
         pokedexFactory = new PokedexFactory();
         pokemonTrainerFactory = new PokemonTrainerFactory();
+        pokedex = new Pokedex();
     }
 
     @Test
     public void testCreateTrainer(){
         Assert.assertEquals("test", pokemonTrainerFactory.createTrainer("test", Team.MYSTIC, pokedexFactory).getName());
         Assert.assertEquals(Team.MYSTIC, pokemonTrainerFactory.createTrainer("test", Team.MYSTIC, pokedexFactory).getTeam());
+        Assert.assertEquals(0, pokemonTrainerFactory.createTrainer("test", Team.MYSTIC, pokedexFactory).getPokedex().size());
     }
 }
