@@ -1,3 +1,12 @@
+[![codecov](https://codecov.io/gh/ThomasSatory/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=1d6015e3-7fe3-479a-8829-73b5f100ea81)](https://codecov.io/gh/ThomasSatory/ceri-m1-techniques-de-test)
+[![CircleCI](https://circleci.com/gh/ThomasSatory/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/ThomasSatory/ceri-m1-techniques-de-test/tree/master)
+
+
+###Auteur 
+Thomas Satory
+###Groupe
+M1-ILSEN-CLA
+
 # UCE Génie Logiciel Avancé : Techniques de tests
 
 ## Introduction
