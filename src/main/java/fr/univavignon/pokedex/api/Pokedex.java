@@ -1,9 +1,29 @@
 package fr.univavignon.pokedex.api;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class Pokedex implements IPokedex {
+
+    List<Pokemon> pokedex;
+    IPokemonFactory ipokemonfactory;
+    IPokemonMetadataProvider ipokemonmetadataprovider;
+
+
+    public Pokedex() {
+        pokedex = new ArrayList<>();
+    }
+
+    public void setPokemonFactory(IPokemonFactory pokemonFactory) {
+        this.ipokemonfactory = pokemonFactory;
+    }
+
+    public void setPokemonMetadataProvider(IPokemonMetadataProvider pokemonMetadataProvider) {
+        this.ipokemonmetadataprovider = pokemonMetadataProvider;
+    }
+
+
 
 
     /**
@@ -13,7 +33,7 @@ public class Pokedex implements IPokedex {
      */
     @Override
     public int size() {
-        return 0;
+        return pokedex.size();
     }
 
     /**
@@ -25,7 +45,8 @@ public class Pokedex implements IPokedex {
      */
     @Override
     public int addPokemon(Pokemon pokemon) {
-        return 0;
+        pokedex.add(pokemon);
+        return size()-1;
     }
 
     /**
@@ -37,7 +58,10 @@ public class Pokedex implements IPokedex {
      */
     @Override
     public Pokemon getPokemon(int id) throws PokedexException {
-        return null;
+        if (id < 0 || id > size()) {
+            throw new PokedexException("Index invalide");
+        }
+        return pokedex.get(id);
     }
 
     /**
@@ -47,7 +71,8 @@ public class Pokedex implements IPokedex {
      */
     @Override
     public List<Pokemon> getPokemons() {
-        return null;
+        final List<Pokemon> unmodifiableList = new ArrayList<>(pokedex);
+        return unmodifiableList;
     }
 
     /**
@@ -59,7 +84,9 @@ public class Pokedex implements IPokedex {
      */
     @Override
     public List<Pokemon> getPokemons(Comparator<Pokemon> order) {
-        return null;
+        final List<Pokemon> unmodifiableList = new ArrayList<>(pokedex);
+        unmodifiableList.sort(order);
+        return unmodifiableList;
     }
 
     /**
@@ -73,8 +100,8 @@ public class Pokedex implements IPokedex {
      * @return Created pokemon instance.
      */
     @Override
-    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-        return null;
+    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException {
+        return ipokemonfactory.createPokemon(index, cp, hp, dust, candy);
     }
 
     /**
@@ -87,6 +114,6 @@ public class Pokedex implements IPokedex {
      */
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-        return null;
+        return ipokemonmetadataprovider.getPokemonMetadata(index);
     }
 }
