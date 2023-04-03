@@ -59,11 +59,25 @@ public class IPokedexTest {
 
     @Test
     public void testCreatePokemon() throws PokedexException {
-        Assert.assertEquals(pokedex.createPokemon(133, 2729, 202, 5000, 4), aquali);
+        Pokemon localaquali = pokedex.createPokemon(133, 2729, 202, 5000, 4);
+        Assert.assertEquals(localaquali.getName(), aquali.getName());
+        Assert.assertEquals(localaquali.getAttack(), aquali.getAttack());
+        Assert.assertEquals(localaquali.getDefense(), aquali.getDefense());
+        Assert.assertEquals(localaquali.getStamina(), aquali.getStamina());
+        Assert.assertEquals(localaquali.getIndex(), aquali.getIndex());
+        Assert.assertEquals(localaquali.getCp(), aquali.getCp());
+        Assert.assertEquals(localaquali.getHp(), aquali.getHp());
+        Assert.assertEquals(localaquali.getDust(), aquali.getDust());
+        Assert.assertEquals(localaquali.getCandy(), aquali.getCandy());
+        Assert.assertEquals(localaquali.getIv(), aquali.getIv());
     }
 
     @Test
     public void testGetPokemonMetadata() throws PokedexException {
-        Assert.assertEquals(pokedex.getPokemonMetadata(133),pokemonMetadataProvider.getPokemonMetadata(133));
+        Assert.assertEquals(pokedex.getPokemonMetadata(133).getName(),pokemonMetadataProvider.getPokemonMetadata(133).getName());
+        Assert.assertEquals(pokedex.getPokemonMetadata(133).getAttack(),pokemonMetadataProvider.getPokemonMetadata(133).getAttack());
+        Assert.assertEquals(pokedex.getPokemonMetadata(133).getDefense(),pokemonMetadataProvider.getPokemonMetadata(133).getDefense());
+        Assert.assertEquals(pokedex.getPokemonMetadata(133).getStamina(),pokemonMetadataProvider.getPokemonMetadata(133).getStamina());
+        Assert.assertEquals(pokedex.getPokemonMetadata(133).getIndex(),pokemonMetadataProvider.getPokemonMetadata(133).getIndex());
     }
 }

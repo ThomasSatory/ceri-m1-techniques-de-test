@@ -19,8 +19,10 @@ public class IPokemonTrainerFactoryTest {
 
     @Test
     public void testCreateTrainer(){
-        Assert.assertEquals("test", pokemonTrainerFactory.createTrainer("test", Team.MYSTIC, pokedexFactory).getName());
-        Assert.assertEquals(Team.MYSTIC, pokemonTrainerFactory.createTrainer("test", Team.MYSTIC, pokedexFactory).getTeam());
-        Assert.assertEquals(pokedexFactory, pokemonTrainerFactory.createTrainer("test", Team.MYSTIC, pokedexFactory).getPokedex());
+        PokemonTrainer pokemonTrainer = pokemonTrainerFactory.createTrainer("Toam",Team.VALOR,new PokedexFactory());
+        PokemonTrainer trainer = new PokemonTrainer("Toam",Team.VALOR,new PokedexFactory().createPokedex(new PokemonMetadataProvider(),new PokemonFactory()));
+        Assert.assertEquals(trainer.getName(),pokemonTrainer.getName());
+        Assert.assertEquals(trainer.getTeam(),pokemonTrainer.getTeam());
+        Assert.assertEquals(trainer.getPokedex().getPokemons(),pokemonTrainer.getPokedex().getPokemons());
     }
 }
