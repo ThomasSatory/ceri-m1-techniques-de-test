@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/ThomasSatory/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=1d6015e3-7fe3-479a-8829-73b5f100ea81)](https://codecov.io/gh/ThomasSatory/ceri-m1-techniques-de-test)
+[![codecov](https://codecov.io/gh/ThomasSatory/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=4CJTBB9HQ7)](https://codecov.io/gh/ThomasSatory/ceri-m1-techniques-de-test)
 [![CircleCI](https://circleci.com/gh/ThomasSatory/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/ThomasSatory/ceri-m1-techniques-de-test/tree/master)
 
 
