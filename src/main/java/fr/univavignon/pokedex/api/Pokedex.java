@@ -7,8 +7,8 @@ import java.util.List;
 public class Pokedex implements IPokedex {
 
     List<Pokemon> pokedex;
-    IPokemonFactory ipokemonfactory;
-    IPokemonMetadataProvider ipokemonmetadataprovider;
+    IPokemonFactory ipokemonfactory = new PokemonFactory();
+    IPokemonMetadataProvider ipokemonmetadataprovider = new PokemonMetadataProvider();
 
 
     public Pokedex() {
