@@ -16,18 +16,9 @@ public class IPokedexTest {
 
     @Before
     public void init() throws PokedexException {
-
-        // mock all the interfaces
-        pokedex = Mockito.mock(IPokedex.class);
+        pokedex = new Pokedex();
         aquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4,56);
         pokemons = new ArrayList<Pokemon>();
-
-        // mock the behavior of the methodss
-        Mockito.when(pokedex.size()).thenReturn(0);
-        Mockito.when(pokedex.addPokemon(aquali)).thenReturn(0);
-        Mockito.when(pokedex.getPokemon(0)).thenReturn(aquali);
-        Mockito.when(pokedex.getPokemon(-1)).thenThrow(new PokedexException("Index out of bounds"));
-        Mockito.when(pokedex.getPokemons()).thenReturn(pokemons);
     }
 
     // Test all the methods of the IPokedex interface
@@ -39,7 +30,7 @@ public class IPokedexTest {
     @Test
     public void testAddPokemon() throws PokedexException {
         pokedex.addPokemon(aquali);
-        Assert.assertEquals(pokedex.size(), 0);
+        Assert.assertEquals(pokedex.size(), 1);
         Assert.assertEquals(pokedex.getPokemon(0), aquali);
     }
 

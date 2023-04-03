@@ -15,16 +15,10 @@ public class IPokedexFactoryTest {
 
     @Before
     public void init(){
-
-        // mock all the interfaces
-        pokemonMetadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
-        pokedexFactory = Mockito.mock(IPokedexFactory.class);
-        pokemonFactory = Mockito.mock(IPokemonFactory.class);
-        pokedex = Mockito.mock(IPokedex.class);
-
-        // mock the behavior of the methods
-        when(pokedexFactory.createPokedex(pokemonMetadataProvider, pokemonFactory)).thenReturn(pokedex);
-        when(pokedex.size()).thenReturn(0);
+        pokemonMetadataProvider = new PokemonMetadataProvider();
+        pokedexFactory = new PokedexFactory();
+        pokemonFactory = new PokemonFactory();
+        pokedex = new Pokedex();
     }
 
     @Test

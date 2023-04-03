@@ -12,9 +12,8 @@ public class IPokemonTrainerFactoryTest {
 
     @Before
     public void init(){
-        pokedexFactory = Mockito.mock(IPokedexFactory.class);
-        pokemonTrainerFactory = Mockito.mock(IPokemonTrainerFactory.class);
-        Mockito.when(pokemonTrainerFactory.createTrainer("test", Team.MYSTIC, pokedexFactory)).thenReturn(new PokemonTrainer("test", Team.MYSTIC, pokedex));
+        pokedexFactory = new PokedexFactory();
+        pokemonTrainerFactory = new PokemonTrainerFactory();
     }
 
     @Test

@@ -14,13 +14,12 @@ public class IPokemonFactoryTest {
 
     @Before
     public void init(){
-        pokemonFactory = Mockito.mock(IPokemonFactory.class);
+        pokemonFactory = new PokemonFactory();
         aquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4,56);
-        Mockito.when(pokemonFactory.createPokemon(133, 2729, 202, 5000, 4)).thenReturn(aquali);
     }
 
     @Test
-    public void testCreatePokemon(){
+    public void testCreatePokemon() throws PokedexException {
         Assert.assertEquals(aquali.getIndex(), pokemonFactory.createPokemon(133, 2729, 202, 5000, 4).getIndex());
         Assert.assertEquals(aquali.getCp(), pokemonFactory.createPokemon(133, 2729, 202, 5000, 4).getCp());
         Assert.assertEquals(aquali.getHp(), pokemonFactory.createPokemon(133, 2729, 202, 5000, 4).getHp());
