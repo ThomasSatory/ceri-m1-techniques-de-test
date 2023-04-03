@@ -28,7 +28,11 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
             throw new PokedexException("Index invalide");
         }
         else{
-            return pokemonMetadatas.get(index);
+            for (int i = 0; i < pokemonMetadatas.size(); i++) {
+                if (pokemonMetadatas.get(i).getIndex() == index)
+                    return pokemonMetadatas.get(i);
+            }
         }
+        return null;
     }
 }
