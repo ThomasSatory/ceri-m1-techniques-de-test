@@ -25,6 +25,10 @@ public class IPokemonMetadataProviderTest {
         Assert.assertEquals(aquali.getStamina(), pokemonMetadataProvider.getPokemonMetadata(133).getStamina());
         Assert.assertEquals(aquali.getName(), pokemonMetadataProvider.getPokemonMetadata(133).getName());
 
-        Assert.assertEquals(new PokedexException("Index invalide"), pokemonMetadataProvider.getPokemonMetadata(-99999));
+        Assert.assertThrows(PokedexException.class, () -> {
+            pokemonMetadataProvider.getPokemonMetadata(1000);
+        });
+
+        Assert.assertNull(pokemonMetadataProvider.getPokemonMetadata(4));
     }
 }
