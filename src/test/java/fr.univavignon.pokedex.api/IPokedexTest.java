@@ -44,6 +44,13 @@ public class IPokedexTest {
     public void testGetPokemon() throws PokedexException {
         ipokedex.addPokemon(aquali);
         Assert.assertEquals(ipokedex.getPokemon(0), aquali);
+        Assert.assertEquals(ipokedex.getPokemon(0).getIndex(), aquali.getIndex());
+        Assert.assertEquals(ipokedex.getPokemon(0).getName(), aquali.getName());
+    }
+
+    @Test
+    public void testGetPokemonException(){
+        ipokedex.addPokemon(aquali);
 
         Assert.assertThrows(PokedexException.class, () -> {
             ipokedex.getPokemon(-10);

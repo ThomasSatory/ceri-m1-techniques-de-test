@@ -57,9 +57,8 @@ public class Pokedex implements IPokedex {
             if (pokemon.getIndex() == id) {
                 return pokemon;
             }
-            throw new PokedexException("index invalide");
         }
-        throw new PokedexException("index invalide");
+        throw new PokedexException("Pokemon not found");
     }
 
     /**
