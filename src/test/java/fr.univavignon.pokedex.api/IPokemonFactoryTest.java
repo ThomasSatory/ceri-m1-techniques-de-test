@@ -20,11 +20,13 @@ public class IPokemonFactoryTest {
 
     @Test
     public void testCreatePokemon() throws PokedexException {
-        Assert.assertEquals(aquali.getIndex(), pokemonFactory.createPokemon(133, 2729, 202, 5000, 4).getIndex());
-        Assert.assertEquals(aquali.getCp(), pokemonFactory.createPokemon(133, 2729, 202, 5000, 4).getCp());
-        Assert.assertEquals(aquali.getHp(), pokemonFactory.createPokemon(133, 2729, 202, 5000, 4).getHp());
-        Assert.assertEquals(aquali.getDust(), pokemonFactory.createPokemon(133, 2729, 202, 5000, 4).getDust());
-        Assert.assertEquals(aquali.getCandy(), pokemonFactory.createPokemon(133, 2729, 202, 5000, 4).getCandy());
-        Assert.assertEquals(aquali.getIv(), pokemonFactory.createPokemon(133, 2729, 202, 5000, 4).getIv(),0.01);
+        Pokemon aqualibis = pokemonFactory.createPokemon(133,2729,202,5000,4);
+
+        Assert.assertEquals(aquali.getIndex(),aqualibis.getIndex());
+        Assert.assertEquals(aquali.getCp(),aqualibis.getCp());
+        Assert.assertEquals(aquali.getHp(), aqualibis.getHp());
+        Assert.assertEquals(aquali.getDust(), aqualibis.getDust());
+        Assert.assertEquals(aquali.getCandy(),aqualibis.getCandy());
+        Assert.assertEquals(aquali.getIv(), aqualibis.getIv(),0.01);
     }
 }
