@@ -53,10 +53,12 @@ public class Pokedex implements IPokedex {
      */
     @Override
     public Pokemon getPokemon(int id) throws PokedexException {
-        if (id < 0 || id > size()) {
-            throw new PokedexException("Index invalide");
+        for (Pokemon pokemon : pokedex) {
+            if (pokemon.getIndex() == id) {
+                return pokemon;
+            }
         }
-        return pokedex.get(id);
+        throw new PokedexException("index invalide");
     }
 
     /**
