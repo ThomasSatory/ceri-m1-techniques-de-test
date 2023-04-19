@@ -15,7 +15,7 @@ public class IPokemonFactoryTest {
     @Before
     public void init(){
         pokemonFactory = new PokemonFactory();
-        aquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4,56);
+        aquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4,100);
     }
 
     @Test
