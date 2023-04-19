@@ -36,16 +36,16 @@ public class IPokedexTest {
     public void testAddPokemon() throws PokedexException {
         ipokedex.addPokemon(aquali);
         Assert.assertEquals(ipokedex.size(), 1);
-        Assert.assertEquals(ipokedex.getPokemon(0), aquali);
+        Assert.assertEquals(ipokedex.getPokemon(133), aquali);
 
     }
 
     @Test
     public void testGetPokemon() throws PokedexException {
         ipokedex.addPokemon(aquali);
-        Assert.assertEquals(ipokedex.getPokemon(0), aquali);
-        Assert.assertEquals(ipokedex.getPokemon(0).getIndex(), aquali.getIndex());
-        Assert.assertEquals(ipokedex.getPokemon(0).getName(), aquali.getName());
+        Assert.assertEquals(ipokedex.getPokemon(133), aquali);
+        Assert.assertEquals(ipokedex.getPokemon(133).getIndex(), aquali.getIndex());
+        Assert.assertEquals(ipokedex.getPokemon(133).getName(), aquali.getName());
     }
 
     @Test
