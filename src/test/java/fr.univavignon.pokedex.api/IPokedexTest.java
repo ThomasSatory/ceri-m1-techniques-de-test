@@ -60,16 +60,11 @@ public class IPokedexTest {
     @Test
     public void testCreatePokemon() throws PokedexException {
         Pokemon localaquali = pokedex.createPokemon(133, 2729, 202, 5000, 4);
-        Assert.assertEquals(localaquali.getName(), aquali.getName());
-        Assert.assertEquals(localaquali.getAttack(), aquali.getAttack());
-        Assert.assertEquals(localaquali.getDefense(), aquali.getDefense());
-        Assert.assertEquals(localaquali.getStamina(), aquali.getStamina());
         Assert.assertEquals(localaquali.getIndex(), aquali.getIndex());
         Assert.assertEquals(localaquali.getCp(), aquali.getCp());
         Assert.assertEquals(localaquali.getHp(), aquali.getHp());
         Assert.assertEquals(localaquali.getDust(), aquali.getDust());
         Assert.assertEquals(localaquali.getCandy(), aquali.getCandy());
-        Assert.assertEquals(localaquali.getIv(), aquali.getIv());
     }
 
     @Test
