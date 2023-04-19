@@ -5,11 +5,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 public class IPokedexTest {
     IPokedex ipokedex;
     Pokemon aquali;
+    Pokemon bulbizarre;
     ArrayList<Pokemon> pokemons;
     Comparator<Pokemon> comparator;
     IPokemonMetadataProvider pokemonMetadataProvider;
@@ -18,6 +21,7 @@ public class IPokedexTest {
     public void init() throws PokedexException {
         ipokedex = new Pokedex();
         aquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4,56);
+        bulbizarre = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
         pokemons = new ArrayList<Pokemon>();
         pokemonMetadataProvider = new PokemonMetadataProvider();
     }
@@ -73,5 +77,32 @@ public class IPokedexTest {
         Assert.assertEquals(ipokedex.getPokemonMetadata(133).getDefense(),pokemonMetadataProvider.getPokemonMetadata(133).getDefense());
         Assert.assertEquals(ipokedex.getPokemonMetadata(133).getStamina(),pokemonMetadataProvider.getPokemonMetadata(133).getStamina());
         Assert.assertEquals(ipokedex.getPokemonMetadata(133).getIndex(),pokemonMetadataProvider.getPokemonMetadata(133).getIndex());
+    }
+
+    @Test
+    public void testGetOrderedListByName(){
+        ipokedex.addPokemon(bulbizarre);
+        ipokedex.addPokemon(aquali);
+
+        List test = Arrays.asList(aquali,bulbizarre);
+        Assert.assertEquals(ipokedex.getPokemons(PokemonComparators.NAME),test);
+    }
+
+    @Test
+    public void testGetOrderedListByIndex(){
+        ipokedex.addPokemon(aquali);
+        ipokedex.addPokemon(bulbizarre);
+
+        List test = Arrays.asList(bulbizarre,aquali);
+        Assert.assertEquals(ipokedex.getPokemons(PokemonComparators.INDEX),test);
+    }
+
+    @Test
+    public void testGetOrderedListByCp(){
+        ipokedex.addPokemon(aquali);
+        ipokedex.addPokemon(bulbizarre);
+
+        List test = Arrays.asList(bulbizarre,aquali);
+        Assert.assertEquals(ipokedex.getPokemons(PokemonComparators.CP),test);
     }
 }
