@@ -21,17 +21,6 @@ public class Pokedex implements IPokedex {
         this.ipokemonmetadataprovider = metadataProvider;
     }
 
-    public void setPokemonFactory(IPokemonFactory pokemonFactory) {
-        this.ipokemonfactory = pokemonFactory;
-    }
-
-    public void setPokemonMetadataProvider(IPokemonMetadataProvider pokemonMetadataProvider) {
-        this.ipokemonmetadataprovider = pokemonMetadataProvider;
-    }
-
-
-
-
     /**
      * Returns the number of pokemon this pokedex contains.
      *
