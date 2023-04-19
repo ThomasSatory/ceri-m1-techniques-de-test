@@ -24,11 +24,12 @@ public class IPokemonMetadataProviderTest {
         Assert.assertEquals(aquali.getDefense(), pokemonMetadataProvider.getPokemonMetadata(133).getDefense());
         Assert.assertEquals(aquali.getStamina(), pokemonMetadataProvider.getPokemonMetadata(133).getStamina());
         Assert.assertEquals(aquali.getName(), pokemonMetadataProvider.getPokemonMetadata(133).getName());
+    }
 
+    @Test
+    public void testGetPokemonMetadataException() throws PokedexException {
         Assert.assertThrows(PokedexException.class, () -> {
             pokemonMetadataProvider.getPokemonMetadata(1000);
         });
-
-        Assert.assertNull(pokemonMetadataProvider.getPokemonMetadata(4));
     }
 }

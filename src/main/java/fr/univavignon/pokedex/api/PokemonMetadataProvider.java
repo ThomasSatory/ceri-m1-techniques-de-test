@@ -24,15 +24,11 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
      */
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-        if(index < 0 || index >= 151){
-            throw new PokedexException("Index invalide");
-        }
-        else{
-            for (int i = 0; i < pokemonMetadatas.size(); i++) {
-                if (pokemonMetadatas.get(i).getIndex() == index)
-                    return pokemonMetadatas.get(i);
+        for(PokemonMetadata metadata : pokemonMetadatas){
+            if(metadata.getIndex() == index){
+                return metadata;
             }
         }
-        return null;
+        throw new PokedexException("L'index du pokémon n'existe pas");
     }
 }
