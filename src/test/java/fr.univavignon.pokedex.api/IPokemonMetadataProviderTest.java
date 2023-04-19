@@ -9,7 +9,7 @@ import org.mockito.Mockito;
 public class IPokemonMetadataProviderTest {
 
     IPokemonMetadataProvider pokemonMetadataProvider;
-    Pokemon aquali;
+    Pokemon aquali; //pokemon de test
 
     @Before
     public void init() {
