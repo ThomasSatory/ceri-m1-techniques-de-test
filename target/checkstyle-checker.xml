@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE module PUBLIC
-        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
-        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+          "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+          "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <!--
 
@@ -10,10 +10,10 @@
     - the Java Language Specification at
       https://docs.oracle.com/javase/specs/jls/se11/html/index.html
 
-    - the Sun Code Conventions at https://www.oracle.com/java/technologies/javase/codeconventions-contents.html
+    - the Sun Code Conventions at https://www.oracle.com/technetwork/java/codeconvtoc-136057.html
 
     - the Javadoc guidelines at
-      https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html
+      https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html
 
     - the JDK Api documentation https://docs.oracle.com/en/java/javase/11/
 
@@ -35,7 +35,7 @@
     <!--
         If you set the basedir property below, then all reported file
         names will be relative to the specified directory. See
-        https://checkstyle.org/config.html#Checker
+        https://checkstyle.org/5.x/config.html#Checker
 
         <property name="basedir" value="${basedir}"/>
     -->
@@ -72,7 +72,7 @@
     <!-- See https://checkstyle.org/config_sizes.html -->
     <module name="FileLength"/>
     <module name="LineLength">
-        <property name="fileExtensions" value="java"/>
+      <property name="fileExtensions" value="java"/>
     </module>
 
     <!-- Checks for whitespace                               -->
@@ -82,10 +82,10 @@
     <!-- Miscellaneous other checks.                   -->
     <!-- See https://checkstyle.org/config_misc.html -->
     <module name="RegexpSingleline">
-        <property name="format" value="\s+$"/>
-        <property name="minimum" value="0"/>
-        <property name="maximum" value="0"/>
-        <property name="message" value="Line has trailing spaces."/>
+       <property name="format" value="\s+$"/>
+       <property name="minimum" value="0"/>
+       <property name="maximum" value="0"/>
+       <property name="message" value="Line has trailing spaces."/>
     </module>
 
     <!-- Checks for Headers                                -->
@@ -119,7 +119,7 @@
         <module name="TypeName"/>
 
         <!-- Checks for imports                              -->
-        <!-- See https://checkstyle.org/config_imports.html -->
+        <!-- See https://checkstyle.org/config_import.html -->
         <module name="AvoidStarImport"/>
         <module name="IllegalImport"/> <!-- defaults to sun.* packages -->
         <module name="RedundantImport"/>
@@ -146,7 +146,7 @@
         <module name="WhitespaceAround"/>
 
         <!-- Modifier Checks                                    -->
-        <!-- See https://checkstyle.org/config_modifier.html -->
+        <!-- See https://checkstyle.org/config_modifiers.html -->
         <module name="ModifierOrder"/>
         <module name="RedundantModifier"/>
 
