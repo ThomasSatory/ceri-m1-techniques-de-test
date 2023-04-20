@@ -52,7 +52,7 @@ jobs:
           command: mvn post-site
       - add_ssh_keys:
           fingerprints:
-            - "fa:ce:e7:1c:0c:08:71:a4:50:9b:c2:2c:64:53:a4:58"
+            - "f8:5b:a6:c7:bc:e3:3e:30:6c:37:7a:d8:7a:65:26:9c"
       - run:
           name: javadoc
           command: mvn javadoc:javadoc
