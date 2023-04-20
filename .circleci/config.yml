@@ -50,6 +50,9 @@ jobs:
       - run:
           name: post
           command: mvn post-site
+      - add_ssh_keys:
+          fingerprints:
+            - "fa:ce:e7:1c:0c:08:71:a4:50:9b:c2:2c:64:53:a4:58"
       - run:
           name: javadoc
           command: mvn javadoc:javadoc
