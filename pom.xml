@@ -100,7 +100,7 @@
                 <version>1.0.0</version>
                 <executions>
                     <execution>
-                        <phase>install</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>badges</goal>
                         </goals>
