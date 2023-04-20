@@ -6,7 +6,7 @@ import java.util.List;
 
 
 /**
- * Pokedex implementation .
+ * Pokedex implementation.
  */
 public class Pokedex implements IPokedex {
 
