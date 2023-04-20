@@ -1,9 +1,23 @@
 package fr.univavignon.pokedex.api;
 
+
+/**
+ * Pokemon factory interface implementation.
+ *
+ * @author ts
+ */
 public class PokemonFactory implements IPokemonFactory{
 
+
+    /**
+     * Pokemon metadata provider.
+     */
     IPokemonMetadataProvider pokemonMetadataProvider;
 
+
+    /**
+     * Default constructor.
+     */
     public PokemonFactory() {
         pokemonMetadataProvider = new PokemonMetadataProvider();
     }

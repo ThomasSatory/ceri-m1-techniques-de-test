@@ -4,17 +4,41 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+
+/**
+ * Pokedex implementation.
+ */
 public class Pokedex implements IPokedex {
 
+    /**
+     * List of pokemon.
+     */
     public List<Pokemon> pokedex;
+
+    /**
+     * Pokemon factory.
+     */
     public IPokemonFactory ipokemonfactory = new PokemonFactory();
+
+    /**
+     * Pokemon metadata provider.
+     */
     public IPokemonMetadataProvider ipokemonmetadataprovider = new PokemonMetadataProvider();
 
 
+    /**
+     * Default constructor.
+     */
     public Pokedex() {
         pokedex = new ArrayList<>();
     }
 
+
+    /**
+     * Constructor with parameters.
+     * @param metadataProvider
+     * @param pokemonFactory
+     */
     public Pokedex(IPokemonMetadataProvider metadataProvider, IPokemonFactory pokemonFactory) {
         pokedex = new ArrayList<>();
         this.ipokemonfactory = pokemonFactory;

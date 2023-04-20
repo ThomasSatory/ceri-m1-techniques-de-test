@@ -3,7 +3,6 @@ package fr.univavignon.pokedex.api;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 //est chargé pour un index donné de retourner les métadonnées d’une espèce.
 public class IPokemonMetadataProviderTest {

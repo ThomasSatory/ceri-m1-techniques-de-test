@@ -3,8 +3,6 @@ package fr.univavignon.pokedex.api;
 import org.junit.Test;
 import org.junit.Assert;
 import org.junit.Before;
-import org.mockito.Mockito;
-import static org.mockito.Mockito.when;
 
 public class IPokedexFactoryTest {
 

@@ -3,10 +3,22 @@ package fr.univavignon.pokedex.api;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Pokemon metadata provider implementation.
+ * @author ts
+ */
 public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 
+    /**
+     * List of pokemon metadata.
+     */
     List<PokemonMetadata> pokemonMetadatas;
 
+
+    /**
+     * Default constructor where we create 2 pokemons.
+     */
     public PokemonMetadataProvider() {
         this.pokemonMetadatas = new ArrayList<>();
         pokemonMetadatas.add(new PokemonMetadata(0, "Bulbizarre", 126, 126, 90));

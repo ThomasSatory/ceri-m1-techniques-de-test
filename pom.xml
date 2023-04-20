@@ -8,6 +8,8 @@
     <properties>
         <maven.compiler.source>10</maven.compiler.source>
         <maven.compiler.target>10</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
@@ -130,4 +132,20 @@
         </plugins>
         <testSourceDirectory>src/test/java</testSourceDirectory>
     </build>
+
+    <distributionManagement>
+        <site>
+            <id>github</id>
+            <url>https://github.com/ThomasSatory/ceri-m1-techniques-de-test/</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com/ThomasSatory/ceri-m1-techniques-de-test.git</connection>
+        <developerConnection>scm:git:ssh://github.com/USERNAME/ceri-m1-techniques-de-test.git</developerConnection>
+        <url>https://github.com/ThomasSatory/ceri-m1-techniques-de-test</url>
+        <tag>HEAD</tag>
+    </scm>
+
+
 </project>
