@@ -56,7 +56,7 @@ public class Pokedex implements IPokedex {
     }
 
     /**
-     * Adds the given <tt>pokemon</tt> to this pokedex and returns
+     * Adds the given <code>pokemon</code> to this pokedex and returns
      * it unique index.
      *
      * @param pokemon Pokemon to add to this pokedex.
@@ -69,11 +69,11 @@ public class Pokedex implements IPokedex {
     }
 
     /**
-     * Locates the pokemon identified by the given <tt>id</tt>.
+     * Locates the pokemon identified by the given <code>id</code>.
      *
      * @param id Unique pokedex relative identifier.
      * @return Pokemon denoted by the given identifier.
-     * @throws PokedexException If the given <tt>index</tt> is not valid.
+     * @throws PokedexException If the given <code>index</code> is not valid.
      */
     @Override
     public Pokemon getPokemon(int id) throws PokedexException {
@@ -98,7 +98,7 @@ public class Pokedex implements IPokedex {
 
     /**
      * Returns an unmodifiable list of all pokemons this pokedex contains.
-     * The list view will be sorted using the given <tt>order</tt>.
+     * The list view will be sorted using the given <code>order</code>.
      *
      * @param order Comparator instance used for sorting the created view.
      * @return Sorted unmodifiable list of all pokemons.
@@ -127,11 +127,11 @@ public class Pokedex implements IPokedex {
 
     /**
      * Retrieves and returns the metadata for the pokemon
-     * denoted by the given <tt>index</tt>.
+     * denoted by the given <code>index</code>.
      *
      * @param index Index of the pokemon to retrieve metadata for.
      * @return Metadata of the pokemon.
-     * @throws PokedexException If the given <tt>index</tt> is not valid.
+     * @throws PokedexException If the given <code>index</code> is not valid.
      */
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
