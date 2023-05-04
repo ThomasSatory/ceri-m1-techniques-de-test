@@ -5,8 +5,7 @@ package fr.univavignon.pokedex.api;
  *
  * @author ts
  */
-
-public class PokemonTrainerFactory implements IPokemonTrainerFactory{
+public class PokemonTrainerFactory implements IPokemonTrainerFactory {
     /**
      * Creates and returns a PokemonTrainer instance.
      *
@@ -16,7 +15,7 @@ public class PokemonTrainerFactory implements IPokemonTrainerFactory{
      * @return Created trainer instance.
      */
     @Override
-    public PokemonTrainer createTrainer(String name, Team team, IPokedexFactory pokedexFactory) {
+    public PokemonTrainer createTrainer(final String name,final Team team,final IPokedexFactory pokedexFactory) {
         IPokedex pokedex = pokedexFactory.createPokedex(null, new PokemonFactory());
         return new PokemonTrainer(name, team, pokedex);
     }

@@ -6,7 +6,7 @@ package fr.univavignon.pokedex.api;
  *
  * @author ts
  */
-public class PokemonFactory implements IPokemonFactory{
+public class PokemonFactory implements IPokemonFactory {
 
 
     /**
@@ -34,9 +34,8 @@ public class PokemonFactory implements IPokemonFactory{
      * @return Created pokemon instance.
      */
     @Override
-    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException {
+    public Pokemon createPokemon(final int index,final int cp,final int hp,final int dust,final int candy) throws PokedexException {
         PokemonMetadata pokemonMetadata = pokemonMetadataProvider.getPokemonMetadata(index);
-        int iv = 100;
-        return new Pokemon(index, pokemonMetadata.getName(), pokemonMetadata.getAttack(), pokemonMetadata.getDefense(), pokemonMetadata.getDefense(), cp, hp, dust, candy, iv);
+        return new Pokemon(index, pokemonMetadata.getName(), pokemonMetadata.getAttack(), pokemonMetadata.getDefense(), pokemonMetadata.getDefense(), cp, hp, dust, candy, 100);
     }
 }
