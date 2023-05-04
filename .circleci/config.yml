@@ -69,7 +69,7 @@ jobs:
           command: |
             git config --global user.name "ThomasSatory"
             git config --global user.email "thomas.satory@alumni.univ-avignon.fr"
-            git clone --branch=gh-pages --depth=1 git@github.com:thomas-satory/ceri-m1-techniques-de-test.git gh-pages
+            git clone --branch=gh-pages --depth=1 git@github.com:ThomasSatory/ceri-m1-techniques-de-test.git gh-pages
             rm -rf gh-pages/*
             cp -R target/site/apidocs/* gh-pages/
             cd gh-pages
