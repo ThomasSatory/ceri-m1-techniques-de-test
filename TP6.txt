@@ -1,0 +1,15 @@
+Question du TP6:
+
+Lorsque nous voulons tester la méthode de création de pokemon de la classe IPokemonFactory,
+en utilisant la nouvelle classe RocketPokemonFactory, nos tests sont tous échoués.
+
+Cela est dû à plusieures choses:
+- La méthode createPokemon ne prend pas en compte les index négatifs, donc l'erreur n'est pas gérée avec une excepetion.
+- Lorsque l'on créé un pokemon à l'aide de la méthode createPokemon, les statistiques du/des pokemons généré(s) sont aléatoires.
+    Ce qui ne permet pas de tester correctement vu qu'on ne pourra pas prédire la valeur de chaque statistique.
+- De plus dans cette classe il n'existe que 3 types de pokemon instantiable ( Ash's Pikachu , MISSINGNO et Bulbasaur).
+    Ces trois types sont stockés dans une Map<Integer,String> qui commence de l'indice -1 à 1 ce qui n'est pas du tout intuitif (j'aurais plus opté pour 0-1-2).
+- La team Rocket n'a pas commenté leur travail ce qui rend la compréhension de leur code longue et plus difficile qu'avec quelques commentaires.
+
+Pour conclure la classe RocketPokemonFactory n'est pas du tout adaptée pour tester la méthode createPokemon de la classe IPokemonFactory.
+C'est pour ça qu'il faut continuer d'utiliser la classe que nous avons instantié.
