@@ -14,8 +14,6 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
      * List of pokemon metadata.
      */
     private List<PokemonMetadata> pokemonMetadatas;
-
-
     /**
      * Getter for the list of pokemon metadata.
      * @return pokemonMetadatas
@@ -37,8 +35,16 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
      */
     public PokemonMetadataProvider() {
         this.pokemonMetadatas = new ArrayList<>();
-        pokemonMetadatas.add(new PokemonMetadata(0, "Bulbizarre", 126, 126, 90));
-        pokemonMetadatas.add(new PokemonMetadata(133, "Aquali", 186, 168, 260));
+        pokemonMetadatas.add(new PokemonMetadata(0,
+                "Bulbizarre",
+                126,
+                126,
+                90));
+        pokemonMetadatas.add(new PokemonMetadata(133,
+                "Aquali",
+                186,
+                168,
+                260));
     }
 
 
@@ -48,7 +54,8 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
      *
      * @param index Index of the pokemon to retrieve metadata for.
      * @return Metadata of the pokemon.
-     * @throws PokedexException If the given <code>index</code> is not valid.
+     * @throws PokedexException If the given
+     * <code>index</code> is not valid.
      */
     @Override
     public PokemonMetadata getPokemonMetadata(final int index) throws PokedexException {

@@ -46,7 +46,7 @@ public class Pokedex implements IPokedex {
      * Setter for the pokedex.
      * @param pokedex
      */
-    public void setPokedex(List<Pokemon> pokedex) {
+    public void setPokedex(final List<Pokemon> pokedex) {
         this.pokedex = pokedex;
     }
 
@@ -62,7 +62,7 @@ public class Pokedex implements IPokedex {
      * Setter for the pokemon factory.
      * @param ipokemonfactory
      */
-    public void setIpokemonfactory(IPokemonFactory ipokemonfactory) {
+    public void setIpokemonfactory(final IPokemonFactory ipokemonfactory) {
         this.ipokemonfactory = ipokemonfactory;
     }
 
@@ -79,7 +79,7 @@ public class Pokedex implements IPokedex {
      * Setter for the pokemon metadata provider.
      * @param provider
      */
-    public void setProvider(IPokemonMetadataProvider provider) {
+    public void setProvider(final IPokemonMetadataProvider provider) {
         this.provider = provider;
     }
 
@@ -88,7 +88,8 @@ public class Pokedex implements IPokedex {
      * @param metadataProvider
      * @param pokemonFactory
      */
-    public Pokedex(final IPokemonMetadataProvider metadataProvider,final IPokemonFactory pokemonFactory) {
+    public Pokedex(final IPokemonMetadataProvider metadataProvider,
+                   final IPokemonFactory pokemonFactory) {
         pokedex = new ArrayList<>();
         this.ipokemonfactory = pokemonFactory;
         this.provider = metadataProvider;
@@ -169,7 +170,12 @@ public class Pokedex implements IPokedex {
      * @return Created pokemon instance.
      */
     @Override
-    public Pokemon createPokemon(final int index,final int cp,final int hp,final int dust,final int candy) throws PokedexException {
+    public Pokemon createPokemon(final int index,
+                                 final int cp,
+                                 final int hp,
+                                 final int dust,
+                                 final int candy)
+            throws PokedexException {
         return ipokemonfactory.createPokemon(index, cp, hp, dust, candy);
     }
 
@@ -179,10 +185,12 @@ public class Pokedex implements IPokedex {
      *
      * @param index Index of the pokemon to retrieve metadata for.
      * @return Metadata of the pokemon.
-     * @throws PokedexException If the given <code>index</code> is not valid.
+     * @throws PokedexException If the given
+     * <code>index</code> is not valid.
      */
     @Override
-    public PokemonMetadata getPokemonMetadata(final int index) throws PokedexException {
+    public PokemonMetadata getPokemonMetadata(final int index)
+            throws PokedexException {
         return provider.getPokemonMetadata(index);
     }
 }
