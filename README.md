@@ -5,6 +5,8 @@
 Auteur: Thomas Satory
 Groupe: M1-ILSEN-CLA
 
+Je n'ai pas un codecoverage de 100% car je n'ai pas testé les getter et setter que j'ai généré suite au checkstyle.
+
 # UCE Génie Logiciel Avancé : Techniques de tests
 
 ## Introduction
