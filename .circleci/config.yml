@@ -54,12 +54,15 @@ jobs:
       - run:
           name: post
           command: mvn post-site
+      - run:
+          name: javadoc
+          command:
+            mvn javadoc:javadoc
+
       - add_ssh_keys:
           fingerprints:
             - "c5:1e:40:d9:2d:5b:e1:30:e1:04:0c:64:04:4c:80:9c"
-      - run:
-          name: javadoc
-          command: mvn javadoc:javadoc
+
       - codecov/upload
       - run:
           name: deploy
